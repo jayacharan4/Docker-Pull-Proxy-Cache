@@ -16,6 +16,8 @@ fout = open("/var/lib/registry-docker/config.yml","a")
 fout.write(data)
 fout.close()
 
+#Starting the registry
+
 cmd2 = "sudo docker run --restart=always -p 5000:5000 \
          --name v2-mirror -v /var/lib/registry-docker:/var/lib/registry \
          --detach registry:2 serve /var/lib/registry/config.yml "
